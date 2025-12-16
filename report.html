@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Report a user or issue in PEEL." />
+  <title>PEEL — Report</title>
+
+  <link rel="icon" type="image/png" href="assets/app-icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PEEL home">
+        <img class="brand-logo" src="assets/app-icon.png" alt="PEEL app icon" width="44" height="44" />
+        <span class="brand-name">PEEL</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#privacy">Safety</a>
+        <a href="report.html" class="pill">Report</a>
+        <a href="privacy.html">Privacy Policy</a>
+
+<a href="index.html#team">Team</a>
+        <a href="index.html#download">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container report-wrap">
+        <div class="section-head">
+          <h2>Report a user or issue</h2>
+          <p>
+            Use this form to report harassment, spam, impersonation, safety concerns, or a bug.
+            Include as much detail as you can — and your email so we can follow up.
+          </p>
+        </div>
+
+        <div class="card form-card">
+          <form id="report-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="reporterEmail">Your email *</label>
+                <input id="reporterEmail" name="reporterEmail" type="email" autocomplete="email" required placeholder="you@example.com" />
+                <div class="small-help">We use this only to contact you about this report.</div>
+              </div>
+
+              <div class="field">
+                <label for="issueType">Type *</label>
+                <select id="issueType" name="issueType" required>
+                  <option value="">Select…</option>
+                  <option value="Harassment / abuse">Harassment / abuse</option>
+                  <option value="Spam / scam">Spam / scam</option>
+                  <option value="Impersonation">Impersonation</option>
+                  <option value="Safety concern">Safety concern</option>
+                  <option value="Bug / technical issue">Bug / technical issue</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="subject">Subject *</label>
+                <input id="subject" name="subject" type="text" required placeholder="Short summary (e.g., spam links in chat)" />
+              </div>
+
+              <div class="field">
+                <label for="reportedUser">Reported user (optional)</label>
+                <input id="reportedUser" name="reportedUser" type="text" placeholder="Username / UID" />
+              </div>
+
+              <div class="field">
+                <label for="contextId">Match / Chat ID (optional)</label>
+                <input id="contextId" name="contextId" type="text" placeholder="matchId / chatId (if known)" />
+              </div>
+
+              <div class="field full">
+                <label for="message">Details *</label>
+                <textarea id="message" name="message" required placeholder="What happened? When? Any screenshots/links?"></textarea>
+              </div>
+
+              <div class="field full">
+                <label class="inline">
+                  <input id="consent" name="consent" type="checkbox" required />
+                  <span>I understand this report will be sent to the PEEL team for review. *</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="button primary" type="submit" id="report-submit">Send report</button>
+              <button class="button ghost" type="button" id="report-copy">Copy report</button>
+              <a class="button ghost" href="index.html">Back to site</a>
+            </div>
+
+            <div id="report-status" class="status" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+
+        <aside class="note" style="margin-top:14px;">
+          <div class="note-title">Tip</div>
+          <p class="small-help" style="margin:0;">
+            If you’re hosting this as a static site, the form may open your email app to send the report.
+            For fully automatic sending, connect this form to your backend endpoint <span style="white-space:nowrap;">/api/report</span>.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img class="footer-logo" src="assets/app-icon.png" alt="" width="32" height="32" />
+        <span>© <span id="year"></span> PEEL</span>
+      </div>
+      <div class="footer-right">
+        <a href="index.html#privacy">Safety</a>
+        <a href="report.html">Report</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html#team">Team</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
